@@ -93,6 +93,18 @@ if df is not None:
             fig_scatter.add_hline(y=min_margin, line_dash="dash", line_color="orange", annotation_text="Min Margin: 15%")
             
             st.plotly_chart(fig_scatter, use_container_width=True)
+            st.markdown(f"""
+                ### 📌 Interpretasi
+
+                Berdasarkan visualisasi di atas, sebagian besar UMKM dengan kategori **Top Growth** berada pada area dengan 
+                **monthly revenue di atas rata-rata** dan **profit margin lebih dari 15%**. 
+
+                Hal ini menunjukkan bahwa UMKM pada kategori tersebut memiliki kemampuan menghasilkan pendapatan tinggi 
+                sekaligus menjaga efisiensi profitabilitas bisnis.
+
+                Dari total keseluruhan data, terdapat **{len(top_growth)} UMKM** yang memenuhi kriteria target investor. 
+                Kelompok ini memiliki potensi yang baik untuk investasi karena menunjukkan kombinasi antara pertumbuhan bisnis dan stabilitas keuntungan.
+                """)
 
         with col_chart2:
             total_umkm = len(df)
@@ -128,6 +140,16 @@ if df is not None:
         )
         ax.set_title('Loyalitas Berdasarkan Masa Operasional')
         st.pyplot(fig)
+        st.markdown("""
+        ### 📌 Interpretasi
+
+        Grafik menunjukkan bahwa UMKM dengan masa operasional yang lebih lama cenderung memiliki tingkat 
+        repeat order rate yang lebih tinggi dibandingkan UMKM yang baru beroperasi.
+
+        Hal ini mengindikasikan bahwa pengalaman bisnis dan keberlangsungan operasional berpengaruh terhadap 
+        loyalitas pelanggan. Semakin lama sebuah UMKM beroperasi, semakin besar kemungkinan mereka membangun 
+        kepercayaan dan hubungan jangka panjang dengan pelanggan.
+        """)
 # --- HALAMAN 3: ANALISIS NARATIF KELAS ---
     elif page == "Analisis Naratif Kelas":
         st.title("📝 Perbandingan Karakteristik Antar Kelas")
